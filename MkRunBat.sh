@@ -16,8 +16,8 @@
 #------------------- Set up the paramters ---------------------#
 input=list  # list of input files [example : nsls cms370/EmbMuSkim2 >& list]
 bunch=50   # the number of input files to be putted in the 1 cfg .py file
-frontpath=/castor/cern.ch/user/d/dmoon/cms370/Hydjet_MinBias_2.76TeV_Z0_Emb_Raw/ # root path for input files
-storage=/castor/cern.ch/user/m/miheejo/cms37x/HIDQM_HYD/  # final storage directory
+frontpath=/castor/cern.ch/cms/store/relval/CMSSW_3_9_0_pre5/RelValHydjetQ_MinBias_2760GeV/GEN-SIM-DIGI-RAW-HLTDEBUG/MC_39Y_V0-v1/0028/ # root path for input files
+storage=/castor/cern.ch/user/m/miheejo/cms390p5/HIDQM_HYD/  # final storage directory
 output=step2_recodqm_   # name of output file
 jname=DQMstep2_          # name of the batch jobs
 cfgpy=step2_MC1_2_RAW2DIGI_RECO_DQM.py           # name of skeleton cfg .py
@@ -26,17 +26,18 @@ batch=mjob.csh          # name of skeleton batch job script (.sh/.csh)
 
 # Making the input bunchs
 echo Reading data directory now ...
-rfdir $frontpath | grep e10_11 > $input
+rfdir $frontpath > $input
+#awk -v p='"rfio:'$frontpath '{if($5 > 130000000) print p$9"\","}' $input > tmp.txt
 awk -v p='"rfio:'$frontpath '{print p$9"\","}' $input > tmp.txt
 
 exec 4<&0   #Save stdin
 #exec 7>&1   #Save stdout
 
 #----------------- File processing parameters -----------------#
-i=1           # number of lines in the input file
+i=1           # number of lines in the input file (Do not edit)
 j=1           # output file number starts from this
 startline=1   # read 'tmp.txt' from this line
-nfiles=-1      # total number of produced .py .csh files (-1 for all)
+nfiles=-1     # total number of produced .py .csh files (-1 for all)
 #--------------------------------------------------------------#
 
 #-------------------- Temporary variables ---------------------#
