@@ -87,12 +87,12 @@ set sc
 set nu
 
 " 탭 크기 설정
-set ts=4
-set sw=4
+set ts=2
+set sw=2
 
 " 탭 -> 공백 변환 기능
 set et
-set sts=4
+set sts=2
 
 " 자동 줄바꿈 함
 set wrap
@@ -163,7 +163,7 @@ set uc=100
 set hls
 
 " 검색시 파일 끝에서 처음으로 되돌리기 안함
-set nows
+"set nows
 
 " 검색시 대소문자를 구별하지 않음
 set ic
@@ -178,8 +178,8 @@ set scs
 
 " GUI 이면, 시작시 크기 설정
 if has("gui_running")
-	set lines=50
-	set co=125
+	set lines=42
+	set co=89
 endif
 
 " 시작시 전체화면으로 설정
@@ -383,6 +383,9 @@ iab xtime <C-R>=strftime("%H:%M:%S")<CR>
 " \v 라는 글자가 항상 표시되니까 햇갈린다... -.-
 "map / /\v
 
+" 클립보드 복사(ctrl+c), 붙여넣기(ctrl+v)
+map <C-c> "+y
+map <C-v> "+P
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GUI 간소화
