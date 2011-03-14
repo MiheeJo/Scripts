@@ -5,7 +5,7 @@ scripte utf-8
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 인클루드의 Vim 설정 파일
 " 마지막 수정: 2006-01-17 04:29:44 KST
-" $Id: .vimrc 112 2006-01-16 19:30:18Z barosl $
+" $Id: vimrc,v 1.2 2011/03/03 14:13:42 miheejo Exp $
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -163,7 +163,7 @@ set uc=100
 set hls
 
 " 검색시 파일 끝에서 처음으로 되돌리기 안함
-"set nows
+set nows
 
 " 검색시 대소문자를 구별하지 않음
 set ic
@@ -192,7 +192,7 @@ endif
 set report=0
 
 " 항상 status 라인을 표시하도록 함.
-set ls=2
+set ls=1
 
 " 폰트 설정
 if has("gui_running")
@@ -255,7 +255,7 @@ au FileType javascript,jsp setl cin
 if has("gui_running")
 	" Vim color file
 	" Maintainer:   Hans Fugal <hans@fugal.net>
-	" Last Change:  $Date: 2005/02/17 03:34:26 $
+	" Last Change:  $Date: 2011/03/03 14:13:42 $
 	" URL:		http://hans.fugal.net/vim/colors/desert.vim
 
 	" cool help screens
@@ -398,7 +398,7 @@ if has("gui_running")
 "	let did_install_syntax_menu = 1
 "	let skip_syntax_sel_menu = 1
 " 설정 방식이 바뀌었다.
-	set go-=m
+"	set go-=m
 
 " 툴바를 보이지 않게 한다.
 	set go-=T
@@ -416,7 +416,7 @@ if has("gui_running")
 	set mouse=
 
 " 마우스 모델을 popup 으로 함.
-	set mousem=popup
+"	set mousem=popup
 
 " '간단한 선택' 다이얼로그가 새 창에서 뜨지 않도록...
 	set go+=c
